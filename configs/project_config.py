@@ -9,18 +9,31 @@ from pathlib import Path
 # Base Project Root
 PROJECT_DIR: Path = Path(__file__).resolve().parent.parent
 
+def _discover_dataset_path(default_folder_name: str, search_keywords: list) -> Path:
+    """Finds dataset directory locally or inside Kaggle/Colab environments."""
+    local_path = PROJECT_DIR / default_folder_name
+    if local_path.exists():
+        return local_path
+    
+    # Check Kaggle (/kaggle/input) and Colab (/content)
+    for root_dir in [Path("/kaggle/input"), Path("/content")]:
+        if root_dir.exists():
+            for kw in search_keywords:
+                for candidate in root_dir.rglob(f"*{kw}*"):
+                    if candidate.is_dir() and list(candidate.glob("*.csv")):
+                        return candidate
+                    elif candidate.is_file() and candidate.suffix.lower() == ".csv":
+                        return candidate.parent
+    return local_path
+
 # Discovered Dataset Locations (Read-Only)
-CICIDS2017_DIR: Path = PROJECT_DIR / "CICIDS2017 Dataset"
-CSE_CIC_IDS2018_DIR: Path = PROJECT_DIR / "CSE-CIC-IDS2018"
+CICIDS2017_DIR: Path = _discover_dataset_path("CICIDS2017 Dataset", ["CICIDS2017", "cicids2017", "2017"])
+CSE_CIC_IDS2018_DIR: Path = _discover_dataset_path("CSE-CIC-IDS2018", ["2018", "CSE-CIC-IDS2018", "ids2018"])
 
 # Dataset Roles & Research Architecture
-# CSE-CIC-IDS2018: Primary dataset for model development, temporal sequence learning,
-#                  and controlled low-frequency intrusion experiments.
 PRIMARY_DATASET_NAME: str = "CSE-CIC-IDS2018"
 PRIMARY_DATASET_DIR: Path = CSE_CIC_IDS2018_DIR
 
-# CICIDS2017: Reserved primarily for cross-dataset generalization and carefully
-#             designed unseen-attack / zero-day evaluation.
 EVAL_DATASET_NAME: str = "CICIDS2017"
 EVAL_DATASET_DIR: Path = CICIDS2017_DIR
 
