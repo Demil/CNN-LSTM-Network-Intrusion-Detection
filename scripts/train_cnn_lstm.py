@@ -18,7 +18,7 @@ from src.training.trainer import CNNLSTMTrainer
 def main():
     parser = argparse.ArgumentParser(description="Train Dual-Head CNN-LSTM Intrusion Detection Model")
     parser.add_argument("--epochs", type=int, default=3, help="Number of training epochs")
-    parser.add_argument("--batch_size", type=int, default=256, help="Batch size")
+    parser.add_argument("--batch_size", type=int, default=1024, help="Batch size")
     parser.add_argument("--seq_len", type=int, default=10, help="Temporal sequence length")
     parser.add_argument("--max_train_steps", type=int, default=None, help="Max steps per epoch (useful for local laptop smoke test)")
     parser.add_argument("--max_val_steps", type=int, default=None, help="Max val steps (useful for local laptop smoke test)")

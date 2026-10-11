@@ -20,7 +20,7 @@ from src.models.cnn_lstm_model import DualHeadCNNLSTM
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate Zero-Day & Known Attack Detection")
-    parser.add_argument("--batch_size", type=int, default=256, help="Batch size")
+    parser.add_argument("--batch_size", type=int, default=1024, help="Batch size")
     parser.add_argument("--seq_len", type=int, default=10, help="Temporal sequence length")
     parser.add_argument("--target_fpr", type=float, default=0.01, help="Target FPR on Benign for threshold calibration")
     parser.add_argument("--max_eval_rows", type=int, default=25000, help="Max flows for val calibration and test known evaluation")
