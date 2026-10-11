@@ -1,0 +1,20 @@
+{
+  "num_samples_evaluated": 200,
+  "overall_accuracy": 1.0,
+  "macro_f1": 1.0,
+  "weighted_f1": 1.0,
+  "reconstruction_mse": {
+    "mean": 11.7424,
+    "std": 2.8605,
+    "min": 3.8701,
+    "max": 17.9997
+  },
+  "class_breakdown": {
+    "Benign": {
+      "support": 200,
+      "correct": 200,
+      "recall": 1.0,
+      "mean_recon_mse": 11.7424
+    }
+  }
+}

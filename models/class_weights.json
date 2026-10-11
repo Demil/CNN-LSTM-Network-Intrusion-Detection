@@ -1,0 +1,64 @@
+{
+  "num_known_classes": 12,
+  "classes": [
+    "Benign",
+    "DDoS",
+    "DoS-Hulk",
+    "Bot",
+    "Infiltration",
+    "SSH-Bruteforce",
+    "PortScan",
+    "DoS-GoldenEye",
+    "FTP-BruteForce",
+    "DoS-SlowHTTPTest",
+    "DoS-Slowloris",
+    "Brute Force -Web"
+  ],
+  "label_to_id": {
+    "Benign": 0,
+    "DDoS": 1,
+    "DoS-Hulk": 2,
+    "Bot": 3,
+    "Infiltration": 4,
+    "SSH-Bruteforce": 5,
+    "PortScan": 6,
+    "DoS-GoldenEye": 7,
+    "FTP-BruteForce": 8,
+    "DoS-SlowHTTPTest": 9,
+    "DoS-Slowloris": 10,
+    "Brute Force -Web": 11
+  },
+  "balanced_class_weights": {
+    "Benign": 0.0964,
+    "DDoS": 1.5195,
+    "DoS-Hulk": 1.7607,
+    "Bot": 3.7643,
+    "Infiltration": 29723.419,
+    "SSH-Bruteforce": 332.4148,
+    "PortScan": 11.7822,
+    "DoS-GoldenEye": 104.0291,
+    "FTP-BruteForce": 180.3545,
+    "DoS-SlowHTTPTest": 43.3391,
+    "DoS-Slowloris": 198.7081,
+    "Brute Force -Web": 584.0847
+  },
+  "effective_sample_weights": {
+    "Benign": 0.04,
+    "DDoS": 0.04,
+    "DoS-Hulk": 0.04,
+    "Bot": 0.04,
+    "Infiltration": 11.1248,
+    "SSH-Bruteforce": 0.1453,
+    "PortScan": 0.04,
+    "DoS-GoldenEye": 0.0622,
+    "FTP-BruteForce": 0.0893,
+    "DoS-SlowHTTPTest": 0.0437,
+    "DoS-Slowloris": 0.096,
+    "Brute Force -Web": 0.2388
+  },
+  "zero_day_unseen_classes": [
+    "SQL Injection",
+    "Brute Force -XSS",
+    "Heartbleed"
+  ]
+}

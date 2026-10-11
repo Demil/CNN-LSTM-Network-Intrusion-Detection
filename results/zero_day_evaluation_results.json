@@ -1,0 +1,12 @@
+{
+  "calibrated_threshold": 18.913189315795936,
+  "total_zero_day_flows_tested": 992,
+  "zero_day_detected_count": 19,
+  "zero_day_detection_recall": 0.0192,
+  "mean_anomaly_score": 9.037727355957031,
+  "unseen_classes_evaluated": [
+    "Heartbleed",
+    "SQL Injection",
+    "Brute Force -XSS"
+  ]
+}

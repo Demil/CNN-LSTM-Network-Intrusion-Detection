@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Large Datasets & Archives (GitHub 100MB file limit)
+*.csv
+*.tsv
+*.pcap
+*.pcap_ISCX
+*.rar
+*.zip
+*.tar.gz
+*.7z
+
+# Raw & Processed Data Directories (Root only)
+/data/
+/CICIDS2017 Dataset/
+/CSE-CIC-IDS2018/
+
+# Model Weights & Checkpoints (Heavy Binaries)
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.onnx
+models/*.joblib
+
+# Retain light configuration JSONs in models/
+!models/class_weights.json
+
+# Environment & IDE
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
